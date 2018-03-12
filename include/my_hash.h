@@ -8,9 +8,9 @@
 
 class hash{
 
-	public:
+//	public:
 		//index of where in hash table we store info associated with key
-		int Hash(string key);
+//		int Hash(string key);
 		
 
 };
