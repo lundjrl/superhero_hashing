@@ -6,27 +6,9 @@
 #define MYHASH_H
 
 
-class hash{
+bool insert(const Superhero & s);
 
-//	public:
-		//index of where in hash table we store info associated with key
-//		int Hash(string key);
-		
-
-};
-
-
-
-
-
-
-
-
-
-
-
-
-
+Superhero & get(const std::string name);
 
 
 #endif  //MYHASH_H

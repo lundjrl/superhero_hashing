@@ -4,16 +4,16 @@
 #include <iostream>
 #include <cstdlib>
 
-//int hash::Hash(string key){
-
-	//hash table size adjustable to inputted file
-
-	//int hash = 0;
-	//int index;
+/**
+ * "A hash routine for string objects"
+ *  ^^ Hash function from book, pg 195 Fig 5.4
+ */
+unsigned int hash(const string & key, int tableSize){
 	
-
-	//index = key.length();
-
-	//return index;
-
-//}
+	unsigned int hashVal = 0;
+	
+	for(char ch : key){
+		hashVal = 37 * hashVal + ch;
+}
+	return hashVal % tableSize;
+}
