@@ -8,7 +8,6 @@
 class hash{
 
 	private:
-		int tableSize;
 
 		//Definition of a superhero
 		int page_id;

@@ -4,6 +4,27 @@
 #include <iostream>
 #include <cstdlib>
 
+/**
+ *"A simple hash function" 
+ * Found from book, pg 195
+ */
+int hash(const string & key, int tableSize){
+	int hashVal = 0;
+	
+	for(char ch : key){
+		hashVal += ch;
+}
+	return hashVal % tableSize;
+}
+
+/**
+ *"Another possible hash function"
+ * Found in the book pg 195
+ */
+int hash(const string & key, int tableSize){
+	
+	return (key[0] + 27 * key[1] + 729 *key[2] ) % tableSize;
+}
 
 /**
  *  * "A hash routine for string objects"
