@@ -8,7 +8,8 @@
  *"A simple hash function" 
  * Found from book, pg 195
  */
-int hash(const string & key, int tableSize){
+
+int hash(const string & key){
 	int hashVal = 0;
 	
 	for(char ch : key){
@@ -21,7 +22,7 @@ int hash(const string & key, int tableSize){
  *"Another possible hash function"
  * Found in the book pg 195
  */
-int hash(const string & key, int tableSize){
+int hash(const string & key){
 	
 	return (key[0] + 27 * key[1] + 729 *key[2] ) % tableSize;
 }
@@ -30,7 +31,7 @@ int hash(const string & key, int tableSize){
  *  * "A hash routine for string objects"
  *   *  ^^ Hash function from book, pg 195 Fig 5.4
  *    */
-unsigned int hash(const string & key, int tableSize){
+unsigned int hash(const string & key){
 
         unsigned int hashVal = 0;
 
@@ -38,5 +39,4 @@ unsigned int hash(const string & key, int tableSize){
                 hashVal = 37 * hashVal + ch;
 }
         return hashVal % tableSize;
-}
-~    
+}   

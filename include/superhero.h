@@ -9,6 +9,9 @@ class hash{
 
 	private:
 
+		//Table for inputted data
+		int tableSize = 17011;
+
 		//Definition of a superhero
 		int page_id;
 		std::string name;
