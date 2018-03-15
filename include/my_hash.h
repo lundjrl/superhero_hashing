@@ -1,51 +1,58 @@
-
+#include <vector>
 #include <string>
 #include <iostream>
-#include <fstream>
-#include <vector>
-#include <iterator>
-#include <algorithm>
+#include "superhero.h"
 
 #ifndef MYHASH_H
 #define MYHASH_H
 
-class hash{
 
-	std::string fileName;
-	std::string delimeter;
+class my_hash{
+	
+	private:
+	
+	//Hash map to store data
+	std::vector<std::vector<Superhero>> hashMap(17011);
 
-public:
-	hash(std::string filename, std::string delm = ",");
-		fileName(filename), delimeter(delm){}
+	//Hashes value.
+	int hash(std::string s){
+		return 1;
+	}
 
-	//Function to grab data from a CSV file
-	std::vector<std::vector<std::string> > getData();
+	public:
+	//Constructor
+	my_hash(){
 
-	bool insert(const Superhero & s);
+	}
+	//Destructor	
+	~my_hash(){
+		
+	}
 
-	Superhero & get(const std::string name);
+	bool insert(const Superhero & s){
+		int hash = hash(s.getName());
+		int existing = hashMap[hash].size();
+		if(existing  > 0){
+			hashMap[hash][existing-1] = s;
+			return false;
+		}
+		else{
+			hashMap[hash][0] = s;
+			return true;
+		}		
+	}	
+	
+	Superhero & get(const std::string name){
+		int hash = hash(s.getName());
+		int i;
+		for(i = 0; i >= hashMap[hash].size()-1; i++){
+			if(std::compare(name, hashMap[hash][i].getName()) == 0)
+				return hashMap[hash][i];
+		}
+	}
 
 };
 
-/**
- *Parses through csv file line by line and returns to vector
- */
-std::vector<std::vector<std::string> > hash::getData(){
-	std::ifstream file(fileName);
-	
-	std::vector<std::vector<std::string> > dataList;
 
-	std::string line = "";
-
-	//Iterate each line and split superheros using delimeter
-	while(getline(file, line)){
-		std::vector<std::string> vec;
-		boost::algorithm::split(vec, line, boost::is_any_of(delimeter));
-		dataList.push_back(vec);
-}
-	file.close();
-	
-	return dataList;
-}
 
 #endif  //MYHASH_H
