@@ -7,19 +7,10 @@
 #include "Superhero.h"
 
 class my_hash{
-	
+class SuperHero;
 	private:
 	
-	//Hash map to store data
-	//std::vector< std::vector<SuperHero> > hashMap(17011);
-
-	//Hashes value.
-	int hash(std::string sh){
-		return 1;
-	}
 	
-	//HashTable
-	int tableSize;
 
 	public:
 	//Constructor
