@@ -5,7 +5,7 @@
 #include <string>
 #include <iostream>
 #include <cstdlib>
-//#include "my_hash.h"
+#include "my_hash.h"
 #include "Superhero.h"
 #include "csv.h"    
 
