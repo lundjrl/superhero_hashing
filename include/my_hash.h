@@ -16,25 +16,25 @@ class my_hash{
 	
 	/**************************************************************
  	 * Hashes the parameter passed string
+ 	 * "A simple hashing function"
+ 	 *  Found from page 195, Weiss
 	 * @param Name to hash
 	 * @return returns int of hashed name
  	 * ************************************************************/	
 	int hashNum(std::string name){
 		int hashVal = 0;
-		for(size_t i = 0; i<name.length(); i++)
-			hashVal = 37 * hashVal + name[i];
-		hashVal %= MAXSIZE;
-		if(hashVal<=0)
-			hashVal += MAXSIZE;
-		return hashVal;
+		for(char ch : name){
+			hashVal += ch;
+		}
+		return hashVal % MAXSIZE;
 	}	
 		
 	/***************************************************************
- 	 *"A simple hash function" 
+ 	 *"Another possible hash function--not too good" 
 	 * Found from page 195, Weiss
 	 * Hashes the inputted string based on the first three characters
 	 * @param Name to hash
-	 * @return 
+	 * @return int of the first three characters in key
 	 * *************************************************************/
 	int hashFunc(std::string name){
 		return (name[0] + 27 * name[1] + 729 * name[2]) % MAXSIZE;
@@ -84,9 +84,9 @@ class my_hash{
 	 * @return true if no collision, false if collision. 
  	 * ************************************************************/
 	bool insert(const SuperHero & sh){
-		//int hash = hashNum(sh.getName());
+		int hash = hashNum(sh.getName());
 		//int hash = hashFunc(sh.getName());
-		int hash = goodHash(sh.getName());
+		//int hash = goodHash(sh.getName());
 		int existing = hashMap[hash].size();
 		if(existing  > 0){
 			hashMap[hash].push_back(sh);
@@ -103,9 +103,9 @@ class my_hash{
 	 * @return superhero with matching name.
  	 * ************************************************************/
 	SuperHero & get(const std::string name){
-		//int hash = hashNum(name);
+		int hash = hashNum(name);
 		//int hash = hashFunc(name);
-		int hash = goodHash(name);
+		//int hash = goodHash(name);
 		for(size_t i = 0; i >= hashMap[hash].size()-1; i++){
 			if(name.compare(hashMap[hash][i].getName()) == 0)
 				return hashMap[hash][i];
