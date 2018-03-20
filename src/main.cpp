@@ -9,6 +9,12 @@
 #include "Superhero.h"
 #include "csv.h"    
 
+/********************************************************************
+ * Main returns the count of collisions from the given hash function
+ *
+ *@param Ignore
+ *@return Count of collisions
+ */
 int main(int argc, char** argv){
 	
 	//Getting rid of warning messages for parameters..
@@ -40,7 +46,12 @@ int main(int argc, char** argv){
 	//Declare Superhero to read values into
 	SuperHero s;
 
-	//Read from src/marvel-wikia-data.csv using csv.h library
+	/**********************************************************
+ 	 * CSV reader trims whitespace and extra ',' to better 
+ 	 * understand and read the marvel-wikia-data.csv file
+ 	 *
+ 	 * All headers are read in the in.read_header line
+ 	***********************************************************/
 	io::CSVReader<13, io::trim_chars<' '>, io::double_quote_escape<',','\"'> > 
 			in("src/marvel-wikia-data.csv");
 
@@ -48,6 +59,7 @@ int main(int argc, char** argv){
 		 "urlslug", "ID", "ALIGN", "EYE", "HAIR", "SEX", 
 		 "GSM", "ALIVE", "APPEARANCES", "FIRST APPEARANCE", "Year");
 	
+	//Loops through the file and inserts a superhero into the hashmap
 	while(in.read_row(page_id, name, urlslug, id, alignment, 
 		eye_color, hair_color, sex, gsm, alive, appearances,
 		first_appearance, year)){

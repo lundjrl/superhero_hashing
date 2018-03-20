@@ -8,7 +8,11 @@ class SuperHero {
 
 
 	private:
-		//Definition of a superhero
+		/*****************************************************
+ 		 * Definition of a superhero
+ 		 * Bool and char variables changed to strings for 
+ 		 * csv reader.
+  		******************************************************/
 		int page_id;
 		std::string name;
 		std::string urlslug;

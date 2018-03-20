@@ -3,13 +3,16 @@
 #include "Superhero.h"
 
 
-
+	//Constructor for a superhero
 	SuperHero::SuperHero(){
 	}
-
+	
+	//Destructor for a superhero
+	//Blank because we do not need to manage memory 
 	SuperHero::~SuperHero(){
 	}
-
+	
+	//Mutator methods for superhero variables
 	void SuperHero::setPageID(int i){
 		page_id = i;
 	}
@@ -50,7 +53,7 @@
 		year = y;
 	}
 		
-	//Getter methods for instance variables
+	//Accessor methods for superhero variables
 	int SuperHero::getPageID(){
 		return page_id;
 	}
