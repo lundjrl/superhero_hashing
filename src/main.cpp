@@ -19,16 +19,17 @@ int main(int argc, char** argv){
 	int count = 0;
 
 	//Variables to record CSV Reader input
+	//Changed bool and char variables to string for more reliable parsing
 	int page_id;
         std::string name;
         std::string urlslug;
         std::string id;
         std::string alignment;
-        std::string eye_color;//
-        std::string hair_color;//
-        std::string sex;//
+        std::string eye_color;
+        std::string hair_color;
+        std::string sex;
         std::string gsm;
-        std::string alive;//
+        std::string alive;
         int appearances;
         std::string first_appearance;
         int year;
