@@ -5,7 +5,9 @@
 
 
 	SuperHero::SuperHero(){
+	}
 
+	SuperHero::~SuperHero(){
 	}
 
 	void SuperHero::setPageID(int i){
@@ -23,19 +25,19 @@
 	void SuperHero::setAlignment(std::string a){
 		alignment = a;
 	}
-	void SuperHero::setEyeColor(char e){
+	void SuperHero::setEyeColor(std::string e){
 		eye_color = e;
 	}
-	void SuperHero::setHairColor(char h){
+	void SuperHero::setHairColor(std::string h){
 		hair_color = h;
 	}
-	void SuperHero::setSex(char s){
+	void SuperHero::setSex(std::string s){
 		sex = s;
 	}
-	void SuperHero::setGsm(char g){
+	void SuperHero::setGsm(std::string g){
 		gsm = g;
 	}
-	void SuperHero::setAlive(bool a){
+	void SuperHero::setAlive(std::string a){
 		alive = a;
 	}
 	void SuperHero::setAppearances(int a){
@@ -64,19 +66,19 @@
 	std::string SuperHero::getAlignment(){
 		return alignment;
 	}
-	char SuperHero::getEyeColor(){
+	std::string SuperHero::getEyeColor(){
 		return eye_color;
 	}
-	char SuperHero::getHairColor(){
+	std::string SuperHero::getHairColor(){
 		return hair_color;
 	}
-	char SuperHero::getSex(){
+	std::string SuperHero::getSex(){
 		return sex;
 	}
 	std::string SuperHero::getGsm(){
 		return gsm;
 	}
-	bool SuperHero::getAlive(){
+	std::string SuperHero::getAlive(){
 		return alive;
 	}
 	int SuperHero::getAppearance(){

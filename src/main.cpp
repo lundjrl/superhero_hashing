@@ -10,8 +10,15 @@
 #include "csv.h"    
 
 int main(int argc, char** argv){
-	int count = 0;
 	
+	//Getting rid of warning messages for parameters..
+	std::ignore = argc;
+	std::ignore = argv;
+	
+	//Counter for collisions
+	int count = 0;
+
+	//Variables to record CSV Reader input
 	int page_id;
         std::string name;
         std::string urlslug;
@@ -25,12 +32,44 @@ int main(int argc, char** argv){
         int appearances;
         std::string first_appearance;
         int year;
-	io::CSVReader<13, io::trim_chars<' '>, io::double_quote_escape<',','\"'> > in("src/marvel-wikia-data.csv");
-	in.read_header(io::ignore_extra_column, "page_id", "name", "urlslug", "ID", "ALIGN", "EYE", "HAIR", "SEX", "GSM", "ALIVE", "APPEARANCES", "FIRST APPEARANCE", "Year");
+	
+	//Declares hashMap
+	my_hash hashMap;
 
-	while(in.read_row(page_id, name, urlslug, id, alignment, eye_color, hair_color, sex, gsm, alive, appearances, first_appearance, year)){
-		count++;
-}	
-	std::cout<< count <<std::endl;
+	//Declare Superhero to read values into
+	SuperHero s;
+
+	//Read from src/marvel-wikia-data.csv using csv.h library
+	io::CSVReader<13, io::trim_chars<' '>, io::double_quote_escape<',','\"'> > 
+			in("src/marvel-wikia-data.csv");
+
+	in.read_header(io::ignore_extra_column, "page_id", "name",
+		 "urlslug", "ID", "ALIGN", "EYE", "HAIR", "SEX", 
+		 "GSM", "ALIVE", "APPEARANCES", "FIRST APPEARANCE", "Year");
+	
+	while(in.read_row(page_id, name, urlslug, id, alignment, 
+		eye_color, hair_color, sex, gsm, alive, appearances,
+		first_appearance, year)){
+		//Assign values to s
+		s.setPageID(page_id);
+		s.setName(name);
+		s.setUrlslug(urlslug);
+		s.setID(id);
+		s.setAlignment(alignment);
+		s.setEyeColor(eye_color);
+		s.setHairColor(hair_color);
+		s.setSex(sex);
+		s.setGsm(gsm);
+		s.setAlive(alive);
+		s.setAppearances(appearances);
+		s.setFirstAppearance(first_appearance);
+		s.setYear(year);
+		//Insert into hashmap. If returns false, there is a collision
+		if(hashMap.insert(s) == false){
+			//Increment count if collision
+			count++;
+		}
+	}	
+	std::cout<< "Total collision count: " <<  count <<std::endl;
 	return count;
 }
