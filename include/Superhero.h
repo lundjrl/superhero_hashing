@@ -6,8 +6,25 @@
 
 class SuperHero {
 
+
+	private:
+		//Definition of a superhero
+		int page_id;
+		std::string name;
+		std::string urlslug;
+		std::string id;
+		std::string alignment;
+		char eye_color;
+		char hair_color;
+		char sex;
+		std::string gsm;
+		bool alive;
+		int appearances;
+		std::string first_appearance;
+		int year;
 	public:
 		SuperHero();
+		~SuperHero();
 
 		//Setter methods for all instance variables.
 		void setPageID(int i);
@@ -26,7 +43,7 @@ class SuperHero {
 
 		//Getter methods for instance variables. 
 		int getPageID();
-		std::string getName();
+		std::string getName() const;
 		std::string getUrlslug();
 		std::string getID();
 		std::string getAlignment();
@@ -38,22 +55,6 @@ class SuperHero {
 		int getAppearance();
 		std::string getFirstAppearance();
 		int getYear();
-
-	private:
-		//Definition of a superhero
-		int page_id;
-		std::string name;
-		std::string urlslug;
-		std::string id;
-		std::string alignment;
-		char eye_color;
-		char hair_color;
-		char sex;
-		std::string gsm;
-		bool alive;
-		int appearances;
-		std::string first_appearance;
-		int year;
 };
 
 #endif
