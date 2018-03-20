@@ -2,7 +2,13 @@
 #include <iostream>
 #include "Superhero.h"
 
-
+/*******************************************************
+ * Superhero implementation file which houses all 
+ * accessor and mutator methods
+ * 
+ * @author James Lund, William Shreeve
+ * @version March 20, 2018
+ */
 	//Constructor for a superhero
 	SuperHero::SuperHero(){
 	}

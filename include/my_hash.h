@@ -7,6 +7,14 @@
 #include "Superhero.h"
 
 #define MAXSIZE 17011
+
+/*********************************************************************
+ * Hashing assignment provides insight to different hashing functions
+ * and how those functions may give different numbers of collisions
+ *
+ * @author James Lund, William Shreeve
+ * @version March 20, 2018
+ */
 class my_hash{
 	
 	private:

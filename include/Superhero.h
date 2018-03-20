@@ -4,6 +4,12 @@
 #include <string>
 #include <iostream>
 
+/*********************************************************************
+ * Interface for the Superhero class
+ *
+ * @author James Lund, William Shreeve
+ * @version March 20, 2018
+ */
 class SuperHero {
 
 

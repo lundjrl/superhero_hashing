@@ -12,8 +12,8 @@
 /********************************************************************
  * Main returns the count of collisions from the given hash function
  *
- *@param Ignore
- *@return Count of collisions
+ * @author James Lund, William Shreeve
+ * @version March 20, 2018
  */
 int main(int argc, char** argv){
 	
